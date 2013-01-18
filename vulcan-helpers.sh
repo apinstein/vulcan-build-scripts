@@ -1,6 +1,6 @@
 mkdir -p ./build
 cd ./build
-BUILD_DIR=`pwd`/build
+BUILD_DIR=`pwd`
 
 # @todo make sure these work later...
 #function ensure_file_exists($local, $fetch) {

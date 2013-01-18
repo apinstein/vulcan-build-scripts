@@ -4,7 +4,7 @@
 
 APACHE_VERSION=2.2.23
 # goofy vulcan output naming convention
-output_name=/tmp/apache-2.4.tgz
+output_name=/tmp/httpd-2.2.tgz
 _tgz=httpd-${APACHE_VERSION}.tgz
 _src=httpd-${APACHE_VERSION}
 [[ ! -d $_src ]] && [[ ! -f $_tgz ]] && curl -o ${_tgz} --location "http://mirror.cogentco.com/pub/apache//httpd/httpd-${APACHE_VERSION}.tar.gz"
@@ -14,7 +14,7 @@ vulcan build -v \
     -s ${_src} \
     -c "./configure  \
         --prefix=/app/apache \
-        --with-mpm=worker
+        --with-mpm=worker \
         && make install
     " \
     -p /app/apache
