@@ -1,4 +1,5 @@
-mkdir -p ./download_temp
+mkdir -p ./build
+cd ./build
 
 # @todo make sure these work later...
 #function ensure_file_exists($local, $fetch) {
