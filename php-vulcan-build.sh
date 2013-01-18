@@ -5,8 +5,8 @@ PHP_VERSION=5.3.21
 # goofy vulcan output naming convention
 output_name=/tmp/php-5.3.tgz
 name=php-${PHP_VERSION}
-_tgz=php-${PHP_VERSION}.tgz
-_src=php-${PHP_VERSION}
+_tgz=${SRC_DIR}/php-${PHP_VERSION}.tgz
+_src=${SRC_DIR}/php-${PHP_VERSION}
 [[ ! -d $_src ]] && [[ ! -f $_tgz ]] && curl -o ${_tgz} --location "http://us1.php.net/get/php-${PHP_VERSION}.tar.gz/from/us1.php.net/mirror"
 [[ ! -d $_src ]] && tar -zxf ${_tgz} -C .
 [[ ! -d $_src ]] && echo "Source code not locally available." && exit 1
@@ -21,6 +21,7 @@ vulcan build -v \
             --enable-pdo  \
             --with-pdo-pgsql  \
             --with-zlib  \
+            --enable-fpm \
         && make install
     " \
     -p /app/vendor/php-${PHP_VERSION}

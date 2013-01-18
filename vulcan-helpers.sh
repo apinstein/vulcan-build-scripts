@@ -1,6 +1,9 @@
-mkdir -p ./build
+mkdir -p ./build/src
 cd ./build
 BUILD_DIR=`pwd`
+SRC_DIR=`pwd`
+# @todo refactor dirs to that src tgz and bin tgz not in same place; vulcan wasn't cooperating
+#SRC_DIR=`pwd`/src
 
 # @todo make sure these work later...
 #function ensure_file_exists($local, $fetch) {

@@ -5,8 +5,8 @@
 MOD_FASTCGI_VERSION=2.4.6
 # goofy vulcan output naming convention
 output_name=/tmp/mod_fastcgi-2.4.tgz
-_tgz=mod_fastcgi-${MOD_FASTCGI_VERSION}.tgz
-_src=mod_fastcgi-${MOD_FASTCGI_VERSION}
+_tgz=${SRC_DIR}/mod_fastcgi-${MOD_FASTCGI_VERSION}.tgz
+_src=${SRC_DIR}/mod_fastcgi-${MOD_FASTCGI_VERSION}
 [[ ! -d $_src ]] && [[ ! -f $_tgz ]] && curl -o ${_tgz} --location "http://util.cloud.tourbuzz.net/sources/apache/mod_fastcgi-${MOD_FASTCGI_VERSION}.tar.gz"
 [[ ! -d $_src ]] && tar -zxf ${_tgz} -C .
 [[ ! -d $_src ]] && echo "Source code not locally available: ${_src}." && exit 1

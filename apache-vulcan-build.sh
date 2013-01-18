@@ -5,8 +5,8 @@
 APACHE_VERSION=2.2.23
 # goofy vulcan output naming convention
 output_name=/tmp/httpd-2.2.tgz
-_tgz=httpd-${APACHE_VERSION}.tgz
-_src=httpd-${APACHE_VERSION}
+_tgz=${SRC_DIR}/httpd-${APACHE_VERSION}.tgz
+_src=${SRC_DIR}/httpd-${APACHE_VERSION}
 [[ ! -d $_src ]] && [[ ! -f $_tgz ]] && curl -o ${_tgz} --location "http://mirror.cogentco.com/pub/apache//httpd/httpd-${APACHE_VERSION}.tar.gz"
 [[ ! -d $_src ]] && tar -zxf ${_tgz} -C .
 [[ ! -d $_src ]] && echo "Source code not locally available: ${_src}." && exit 1
