@@ -21,6 +21,5 @@ vulcan build -v \
        && make install
     " \
     -p /app/vendor/subversion-${SVN_VERSION} \
-&& echo Copying binary tgz to `pwd`/${name} \
-&& mkdir -p ./${name} \
-&& tar -C ./${name} -vzxf ${output_name} `tar -ztf ${output_name} | grep "^bin/"`
+&& echo Copying binary tgz to ${BUILD_DIR} \
+&& mv ${output_name} ${BUILD_DIR}/
