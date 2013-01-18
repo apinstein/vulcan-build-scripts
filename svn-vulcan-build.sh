@@ -3,7 +3,7 @@
 
 SVN_VERSION=1.7.8
 # goofy vulcan output naming convention
-output_name=/tmp/subversion-5.3.tgz
+output_name=/tmp/subversion-1.7.tgz
 name=subversion-${SVN_VERSION}
 _tgz=${SRC_DIR}/subversion-${SVN_VERSION}.tgz
 _src=${SRC_DIR}/subversion-${SVN_VERSION}
@@ -21,6 +21,6 @@ vulcan build -v \
        && make install
     " \
     -p /app/vendor/subversion-${SVN_VERSION} \
-&& echo Extracting binaries to `pwd`/${name} \
-&& mkdir -p ./${name} /
+&& echo Copying binary tgz to `pwd`/${name} \
+&& mkdir -p ./${name} \
 && tar -C ./${name} -vzxf ${output_name} `tar -ztf ${output_name} | grep "^bin/"`
