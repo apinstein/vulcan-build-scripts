@@ -15,7 +15,7 @@ vulcan build -v \
     -c "mkdir -p /app/apache && curl -s http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/apache_mod_fastcgi-2.2.22.tgz | tar -zxvf - -C /app/apache \
        && mkdir -p sqlite-amalgamation && curl -s http://www.sqlite.org/sqlite-autoconf-3071502.tar.gz | tar xz -O sqlite-autoconf-3071502/sqlite3.c > sqlite-amalgamation/sqlite3.c \
        && ./configure  \
-            --prefix=/app/vendor/subversion-${SVN_VERSION} \
+            --prefix=/app \
             --with-apr=/app/apache \
             --with-apr-util=/app/apache \
        && make install
