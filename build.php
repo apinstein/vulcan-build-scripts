@@ -59,7 +59,7 @@ function build($name, $version, $sourceUrl, $buildScript, $dependencies = array(
     }
 
     $buildScript = str_replace('%%VULCAN_BUILD_CONFIGURE_OPTIONS%%', '--prefix=/app/vendor --with-libs=/app/vendor:/', $buildScript);
-    $buildScript = 'export DESTDIR=/tmp && mkdir -p ${DESTDIR}/app/vendor && ' . $buildScript;
+    $buildScript = 'mkdir -p /tmp/app/vendor && export DESTDIR=/tmp INSTALL_ROOT=/tmp && ' . $buildScript;
 
     $vulcanCommand = <<<BUILD
 vulcan build -v \
