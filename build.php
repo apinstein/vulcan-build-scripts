@@ -7,9 +7,7 @@
  *
  * /app/vendor
  *
- * At build time, dependencies are installed into /app/vendor and the build occurs in /tmp/vendor-build
- *
- *
+ * At build time, dependencies are installed into /app/vendor and the build artifacts are directed at /tmp/app/vendor which is tgz'd as the artifact
  */
 
 define('BUILD_DIR', __DIR__ . '/build');
@@ -60,11 +58,14 @@ function build($name, $version, $sourceUrl, $buildScript, $dependencies = array(
         $buildScript = "{$depsInstallCommand} \\\n  && {$buildScript}";
     }
 
+    $buildScript = str_replace('%%VULCAN_BUILD_CONFIGURE_OPTIONS%%', '--prefix=/app/vendor --with-libs=/app/vendor:/', $buildScript);
+    $buildScript = 'export DESTDIR=/tmp && mkdir -p ${DESTDIR}/app/vendor && ' . $buildScript;
+
     $vulcanCommand = <<<BUILD
 vulcan build -v \
     -s {$srcDir} \
     -c '{$buildScript}' \
-    -p '/tmp/vendor-build' \
+    -p '/tmp/app/vendor' \
     -o {$artifactFilePath}
 BUILD;
     print "\n{$vulcanCommand}\n\n";
