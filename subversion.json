@@ -4,7 +4,7 @@
     "sourceUrl": "http://www.globalish.com/am/subversion/subversion-1.7.8.tar.gz",
     "buildScript": "mkdir -p sqlite-amalgamation && curl -s http://www.sqlite.org/sqlite-autoconf-3071502.tar.gz | tar xz -O sqlite-autoconf-3071502/sqlite3.c > sqlite-amalgamation/sqlite3.c && ./configure --prefix=/tmp/vendor-build --enable-all-static --with-apr=/app/vendor/bin/apr-1-config --with-apr-util=/app/vendor/bin/apr-1-config --with-neon --without-gssapi && make install",
     "dependencies": [
-        'http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/apache_mod_fastcgi-2.2.22.tgz',
-        'http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/neon-0.29.6.tgz'
+        "http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/apache-2.2.23.tgz",
+        "http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/neon-0.29.6.tgz"
     ]
 }
