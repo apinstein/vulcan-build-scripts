@@ -54,7 +54,7 @@ function build($name, $version, $sourceUrl, $buildScript, $dependencies = array(
     {
         $depsInstallCommands = array();
         foreach ($dependencies as $depUrl) {
-            $depsInstallCommands[] = "curl --silent --follow {$depUrl} | tar xf -C /app/vendor";
+            $depsInstallCommands[] = "curl --silent --location {$depUrl} | tar xz -C /app/vendor";
         }
         $depsInstallCommand = join(' && ', $depsInstallCommands);
         $buildScript = "{$depsInstallCommand} \\\n  && {$buildScript}";
