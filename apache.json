@@ -1,0 +1,7 @@
+{
+    "name": "apache",
+    "version": "2.2.23",
+    "sourceUrl": "http://mirror.cogentco.com/pub/apache//httpd/httpd-2.2.23.tar.gz",
+    "buildScript": "./configure --prefix=/tmp/vendor-build --with-mpm=worker && make install",
+    "dependencies": []
+}
