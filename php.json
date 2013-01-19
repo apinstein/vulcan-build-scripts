@@ -1,0 +1,7 @@
+{
+    "name": "php",
+    "version": "5.3.21",
+    "sourceUrl": "http://us1.php.net/get/php-5.3.21.tar.gz/from/us1.php.net/mirror",
+    "buildScript": "./configure %%VULCAN_BUILD_CONFIGURE_OPTIONS%% --without-pear --enable-pcntl --with-curl --with-pgsql --enable-pdo --with-pdo-pgsql --with-zlib --enable-fpm && make install",
+    "dependencies": []
+}
