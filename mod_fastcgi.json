@@ -1,0 +1,9 @@
+{
+    "name": "mod_fastcgi",
+    "version": "2.4.6",
+    "sourceUrl": "http://util.cloud.tourbuzz.net/sources/apache/mod_fastcgi-2.4.6.tar.gz",
+    "buildScript": "cp Makefile.AP2 Makefile && make top_dir=/app/vendor install",
+    "dependencies": [
+        "http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/apache-2.2.23.tgz"
+     ]
+}
