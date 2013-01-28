@@ -1,0 +1,9 @@
+{
+    "name": "php_apc",
+    "version": "3.1.14",
+    "sourceUrl": "http://pecl.php.net/get/APC-3.1.14.tgz",
+    "buildScript": "/app/vendor/bin/phpize && ./configure --with-php-config=/app/vendor/bin/php-config && make install",
+    "dependencies": [
+        "http://util.cloud.tourbuzz.net.s3.amazonaws.com/heroku/builds/php-5.3.21.tgz"
+     ]
+}
